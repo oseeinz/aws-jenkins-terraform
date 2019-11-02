@@ -1,0 +1,73 @@
+---
+- name: Installing Java 1.8
+  yum:
+    name: java-1.8.0-openjdk
+    state: present
+
+- name: Adding "tomcat" group
+  group:
+    name: tomcat
+    state: present
+
+- name: Adding "tomcat" user
+  user:
+    name: tomcat
+    group: tomcat
+    state: present
+
+- name: Creatiing tomcat install directory
+  file:
+    path: "{{tomcat_install_path}}"
+    state: directory
+    owner: tomcat
+    group: tomcat
+    mode: 0755
+
+- name: Downloading Tomcat tar.gz
+  get_url:
+    url: "{{ tomcat_url }}"
+    dest: "{{ tomcat_archv_dest }}"
+
+- name: Extracting tomcat archive to installation path
+  unarchive:
+    src: "{{ tomcat_archv_dest }}/apache-tomcat-{{ tomcat_ver }}.tar.gz"
+    dest: "{{tomcat_install_path}}"
+    remote_src: yes
+    extra_opts: "--strip-components=1"
+
+- name: Copying tomcat users.xml to tomcat conf directory
+  template:
+    src: templates/tomcat-users.xml
+    dest: "{{ tomcat_install_path }}/conf"
+
+- name: give apache-tomcat's permission to tomcat directory
+  file:
+    path: "{{tomcat_install_path}}"
+    owner: tomcat
+    group: tomcat
+    mode: 0755
+    recurse: yes
+
+- name: Copying tomcat service file to systemd
+  template:
+    src: templates/tomcat.service
+    dest: "{{ systemd_dest}}"
+  when: ansible_service_mgr == "systemd"
+
+- name: Cleaning tar.gz file
+  file:
+    path: "{{ tomcat_archv_dest }}/apache-tomcat-{{ tomcat_ver }}.tar.gz"
+    state: absent
+
+- name: Restart tomcat
+  service:
+    name: tomcat
+    state: restarted
+
+- name: Start and enable tomcat
+  systemd:
+    name: tomcat
+    state: started
+    enabled: true
+    daemon_reload: true
+  when: ansible_service_mgr == "systemd"
