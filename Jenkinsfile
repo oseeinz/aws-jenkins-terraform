@@ -22,7 +22,7 @@ try {
         ansiColor('xterm') {
           sh 'packer.io version'
           sh 'pwd'
-          sh 'cd /packer'
+          sh '/packer'
           sh 'pwd'
           sh 'ls -a'
           sh 'packer.io validate packer.json'
