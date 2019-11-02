@@ -23,6 +23,8 @@ try {
           sh 'packer.io version'
           sh 'pwd'
           sh 'cd /packer'
+          sh 'pwd'
+          sh 'ls -a'
           sh 'packer.io validate packer.json'
           //sh 'packer.io build packer.json'
         }
