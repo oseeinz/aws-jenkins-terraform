@@ -10,9 +10,9 @@
     },
     {
       "type": "ansible-local",
-      "playbook_file": "./ansible/tomcat-setup.yml",
+      "playbook_file": "/ansible/tomcat-setup.yml",
       "role_paths": [
-        "/home/ec2-user/packer_proj/ansible/roles/tomcat"
+        "/packer/ansible/roles/tomcat"
       ]
     }
   ],
