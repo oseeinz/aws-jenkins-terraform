@@ -23,7 +23,7 @@ try {
           sh 'packer.io version'
           sh 'pwd'
           sh 'ls'
-          sh '/packer'
+          sh 'cd packer'
           sh 'pwd'
           sh 'ls'
           sh 'packer.io validate packer.json'
