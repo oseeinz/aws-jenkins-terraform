@@ -84,8 +84,10 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-//            sh 'cd /terraform'
-//            sh 'terraform apply tfplan'
+//            sh '''
+//               cd terraform
+//               terraform apply tfplan
+//            '''
           }
         }
       }
@@ -102,8 +104,10 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-    //        sh 'cd /terraform'
-   //         sh 'terraform destroy -auto-approve'
+//            sh '''
+//               cd terraform
+//               terraform destroy -auto-approve
+//            '''
           }
         }
       }
