@@ -26,7 +26,7 @@ terraform {
 }
 ```
 ## Configure Anisible in Packer Provisioner
-* Make sure to specify the playbook and role path for ansible
+* Make sure to specify the playbook and role path for ansible in packer provisioner
 
 ## Plugins Required
 
