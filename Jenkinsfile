@@ -23,7 +23,7 @@ try {
           sh '''
               packer.io version
               cd packer
-              packer.io validate packer.json
+              packer.io build packer.json
            '''
         }
       }
@@ -63,7 +63,6 @@ try {
       ]]) {
         ansiColor('xterm') {
           sh '''
-             terraform --version
              cd terraform
              terraform plan -out=tfplan
           '''
@@ -85,11 +84,10 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-//            sh '''
-//               terraform --version
-//               cd terraform
-//               terraform apply tfplan
-//            '''
+            sh '''
+               cd terraform
+               terraform apply tfplan
+            '''
           }
         }
       }
