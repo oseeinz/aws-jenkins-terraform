@@ -41,9 +41,12 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh 'terraform --version'
-          sh 'cd terraform'
-          sh 'terraform init'
+          sh '''
+             terraform --version
+             cd terraform
+             ls
+             //terraform init
+          '''
         }
       }
     }
