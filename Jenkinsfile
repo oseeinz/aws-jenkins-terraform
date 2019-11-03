@@ -24,7 +24,7 @@ try {
               packer.io version
               cd packer
               packer.io validate packer.json
-              packer.io build packer.json
+//              packer.io build packer.json
            '''
         }
       }
@@ -65,7 +65,7 @@ try {
         ansiColor('xterm') {
           sh '''
              cd terraform
-             terraform plan -out=tfplan
+//             terraform plan -out=tfplan
           '''
         }
       }
@@ -87,7 +87,7 @@ try {
           ansiColor('xterm') {
             sh '''
                cd terraform
-               terraform apply tfplan
+//               terraform apply tfplan
             '''
           }
         }
