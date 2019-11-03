@@ -63,6 +63,7 @@ try {
       ]]) {
         ansiColor('xterm') {
           sh '''
+             terraform --version
              cd terraform
              terraform plan -out=tfplan
           '''
@@ -85,6 +86,7 @@ try {
         ]]) {
           ansiColor('xterm') {
 //            sh '''
+//               terraform --version
 //               cd terraform
 //               terraform apply tfplan
 //            '''
