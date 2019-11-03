@@ -21,10 +21,11 @@ try {
       ]]) {
         ansiColor('xterm') {
           sh '''
-             packer.io version
-             cd packer
-             ls
-          '''
+              packer.io version
+              cd packer
+              packer.io validate packer.json
+//              packer.io build packer.json
+           '''
         }
       }
     }
@@ -41,11 +42,9 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh '''
-             terraform --version
-             cd terraform
-             terraform init
-          '''
+ //         sh 'terraform --version'
+ //         sh 'cd terraform'
+ //         sh 'terraform init'
         }
       }
     }
@@ -62,10 +61,8 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-//            sh '''
-//               cd terraform
-//               terraform plan -out=tfplan
-            '''
+  //        sh 'cd /terraform'
+  //        sh 'terraform plan -out=tfplan'
         }
       }
     }
@@ -84,10 +81,8 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-//            sh '''
-//               cd terraform
-//               terraform apply tfplan
-//            '''
+//            sh 'cd /terraform'
+//            sh 'terraform apply tfplan'
           }
         }
       }
@@ -104,10 +99,8 @@ try {
           secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
         ]]) {
           ansiColor('xterm') {
-//            sh '''
-//               cd terraform
-//               terraform destroy -auto-approve
-//            '''
+    //        sh 'cd /terraform'
+   //         sh 'terraform destroy -auto-approve'
           }
         }
       }
