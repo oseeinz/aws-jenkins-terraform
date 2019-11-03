@@ -21,14 +21,9 @@ try {
       ]]) {
         ansiColor('xterm') {
           sh '''
-             pwd
-             ls
              packer.io version
              cd packer
-             pwd
              ls
-//             packer.io validate packer.json
-//             packer.io build packer.json
           '''
         }
       }
