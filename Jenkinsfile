@@ -42,6 +42,7 @@ try {
       ]]) {
         ansiColor('xterm') {
           sh 'terraform --version'
+          sh 'cd terraform'
           sh 'terraform init'
         }
       }
