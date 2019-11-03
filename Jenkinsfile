@@ -23,7 +23,7 @@ try {
           sh '''
              pwd
              ls
-             packer.io version'
+             packer.io version
              cd packer
              pwd
              ls
