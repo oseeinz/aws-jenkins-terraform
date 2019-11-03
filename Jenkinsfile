@@ -44,8 +44,7 @@ try {
           sh '''
              terraform --version
              cd terraform
-             ls
-             //terraform init
+             terraform init
           '''
         }
       }
