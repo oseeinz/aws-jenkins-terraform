@@ -62,10 +62,10 @@ try {
         secretKeyVariable: 'AWS_SECRET_ACCESS_KEY'
       ]]) {
         ansiColor('xterm') {
-          sh '''
-             cd terraform
-             terraform plan -out=tfplan
-          '''
+//            sh '''
+//               cd terraform
+//               terraform plan -out=tfplan
+            '''
         }
       }
     }
