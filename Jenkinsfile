@@ -24,7 +24,6 @@ try {
               packer.io version
               cd packer
               packer.io validate packer.json
-//              packer.io build packer.json
            '''
         }
       }
