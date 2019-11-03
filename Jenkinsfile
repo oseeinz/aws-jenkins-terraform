@@ -23,7 +23,7 @@ try {
           sh '''
               packer.io version
               cd packer
-              packer.io build packer.json
+              packer.io validate packer.json
            '''
         }
       }
