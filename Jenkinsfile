@@ -23,6 +23,8 @@ try {
           sh '''
               packer.io version
               cd packer
+              pwd
+              ls
               packer.io validate packer.json
            '''
         }
