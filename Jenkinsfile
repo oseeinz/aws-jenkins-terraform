@@ -24,7 +24,7 @@ try {
               packer.io version
               cd packer
               pwd
-              packer.io validate packer.json
+ //             packer.io validate packer.json
            '''
         }
       }
