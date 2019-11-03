@@ -63,7 +63,8 @@ try {
       ]]) {
         ansiColor('xterm') {
   //        sh 'cd /terraform'
-  //        sh 'terraform plan -out=tfplan'
+          sh 'pwd'
+          sh 'terraform plan -out=tfplan'
         }
       }
     }
