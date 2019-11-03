@@ -2,7 +2,7 @@
 terraform {
   backend "s3" {
     bucket = "terraform-bucket-ose"
-    key    = "terraform.tfstate"
+    key    = "terraform/tf.tfstate"
     region = "us-east-1"
   }
 }
