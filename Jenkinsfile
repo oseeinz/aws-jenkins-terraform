@@ -22,6 +22,7 @@ try {
         ansiColor('xterm') {
           sh '''
               packer.io version
+              pwd
               cd packer
               pwd
               ls
