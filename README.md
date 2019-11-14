@@ -14,7 +14,7 @@ devOps workflow with Terraform, packer, ansible and Jenkins.
 
 ## Setup Bucket
 
-You will need to create a bucket and reference the bucket name in the following section of `main.tf`:
+You will need to create a bucket and reference the bucket name in the following section of `s3_backend.tf`:
 
 ```
 terraform {
