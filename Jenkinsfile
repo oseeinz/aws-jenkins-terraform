@@ -1,9 +1,9 @@
 pipeline {
     agent any
     stages {
-        stage('checkout') {
+        stage('Checkout') {
             steps {
-	              cleanWs()
+                cleanWs()
                 checkout scm
             }
         }
