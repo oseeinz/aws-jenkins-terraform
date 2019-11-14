@@ -1,6 +1,6 @@
 #set default region
-variable "aws_region" {
-  default = "us-east-1"
+#variable "aws_region" {
+#  default = "us-east-1"
 }
 #Custom AMI to be used to launch instance
 #variable "ami" {
