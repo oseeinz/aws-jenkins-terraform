@@ -4,13 +4,20 @@
 
 devOps workflow with Terraform, packer, ansible and Jenkins.
 
-## Requirements
+## General Requirements
 
 * Terraform installed on Jenkins
 * Correct plugins installed on Jenkins
 * GitHub access token
 * AWS credentials
 * S3 bucket
+* Terraform v0.12.14
+
+## Requirements for Terraform
+* data aws_ami (in data.tf) requires pre-backed ami from packer build
+
+* AWS CLI and IAM role attached to instance
+
 
 ## Setup Bucket
 
@@ -19,16 +26,16 @@ You will need to create a bucket and reference the bucket name in the following 
 ```
 terraform {
   backend "s3" {
-    bucket = "terraform-bucket-alex"
+    bucket = "terraform-bucket-name"
     key    = "terraform.tfstate"
     region = "us-east-1"
   }
 }
 ```
-## Configure Anisible in Packer Provisioner
+## Configure Anisible-local in Packer Provisioner
 * Make sure to specify the playbook and role path for ansible in packer provisioner
 
-## Plugins Required
+## Plugins Required for Jenkins
 
 * [Workspace Cleanup Plugin](https://wiki.jenkins.io/display/JENKINS/Workspace+Cleanup+Plugin)
 * [Credentials Binding Plugin](https://wiki.jenkins.io/display/JENKINS/Credentials+Binding+Plugin)
