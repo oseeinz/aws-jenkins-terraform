@@ -1,3 +1,4 @@
 provider "aws" {
-  region  = "${var.aws_region}"
+  version = "~> 2.35"
+  region  = "us-east-1"
 }
