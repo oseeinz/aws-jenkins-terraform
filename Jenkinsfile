@@ -20,7 +20,7 @@ pipeline {
             steps {
                 dir('packer') {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awsCredentials', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-                        //sh 'packer.io validate packer.json'
+                        sh 'packer.io validate packer.json'
                         // sh 'packer.io build packer.json'
                     }
                 }
