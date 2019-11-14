@@ -12,7 +12,7 @@
       "type": "ansible-local",
       "playbook_file": "./ansible/tomcat-setup.yml",
       "role_paths": [
-        "/var/lib/jenkins/workspace/aws_jenk_terra/packer/ansible/roles/tomcat"
+        "../packer/ansible/roles/tomcat"
       ]
     }
   ],
