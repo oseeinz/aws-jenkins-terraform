@@ -18,7 +18,6 @@ devOps workflow with Terraform, packer, ansible and Jenkins to provision HA evni
 
 * AWS CLI installed jenkins server
 
-
 ## Setup Bucket
 
 You will need to create a bucket and reference the bucket name in the following section of `s3_backend.tf`:
@@ -32,6 +31,9 @@ terraform {
   }
 }
 ```
+## AWS credential Setup
+
+
 ## Configure Anisible-local in Packer Provisioner
 * Make sure to specify the playbook and role path for ansible in packer provisioner
 
