@@ -16,7 +16,7 @@ devOps workflow with Terraform, packer, ansible and Jenkins to provision HA evni
 ## Requirements for Terraform
 * data aws_ami (in data.tf) requires pre-backed ami from packer build
 
-* AWS CLI installed jenkins sev
+* AWS CLI installed jenkins server
 
 
 ## Setup Bucket
