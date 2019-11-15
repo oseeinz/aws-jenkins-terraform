@@ -2,11 +2,11 @@
 
 ## Overview
 
-devOps workflow with Terraform, packer, ansible and Jenkins.
+devOps workflow with Terraform, packer, ansible and Jenkins to provision HA evnironment with httpd and Tomcat.
 
 ## General Requirements
 
-* Terraform installed on Jenkins
+* Terraform installed on Jenkins server
 * Correct plugins installed on Jenkins
 * GitHub access token
 * AWS credentials
@@ -16,7 +16,7 @@ devOps workflow with Terraform, packer, ansible and Jenkins.
 ## Requirements for Terraform
 * data aws_ami (in data.tf) requires pre-backed ami from packer build
 
-* AWS CLI and IAM role attached to instance
+* AWS CLI installed jenkins sev
 
 
 ## Setup Bucket
