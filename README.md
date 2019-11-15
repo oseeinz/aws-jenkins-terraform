@@ -31,8 +31,6 @@ terraform {
   }
 }
 ```
-## AWS credential Setup
-
 
 ## Configure Anisible-local in Packer Provisioner
 * Make sure to specify the playbook and role path for ansible in packer provisioner
@@ -45,3 +43,16 @@ terraform {
 * [GitHub Plugin](https://wiki.jenkins.io/display/JENKINS/GitHub+Plugin)
 * [Pipeline Plugin](https://wiki.jenkins.io/display/JENKINS/Pipeline+Plugin)
 * [CloudBees AWS Credentials Plugin](https://wiki.jenkins.io/display/JENKINS/CloudBees+AWS+Credentials+Plugin)
+
+## AWS credential Setup
+
+![awscredential setup](screenshots/aws-cred1.png)
+
+![awscredential setup](screenshots/aws-cred2.png)
+
+
+## Jenkins Pipeline Result
+
+![pipeline build](screenshots/pipeline.png)
+
+![pipeline build](screenshots/pipeline2.png)
