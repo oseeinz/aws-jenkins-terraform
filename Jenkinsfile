@@ -18,13 +18,10 @@ pipeline {
         }
         stage('Packer Build') {
             steps {
-              input('Do you want to backer AMI?')
                 dir('packer') {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awsCredentials', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
-                        ansiColor('xterm') {
-                            sh 'packer.io validate packer.json'
-                            // sh 'packer.io build packer.json'
-                        }
+                        sh 'packer.io validate packer.json'
+                        sh 'packer.io build packer.json'
                     }
                 }
             }
@@ -55,7 +52,7 @@ pipeline {
                 dir('terraform') {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awsCredentials', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                         ansiColor('xterm') {
-                            //sh 'terraform apply tfplan'
+                            sh 'terraform apply tfplan'
                         }
                     }
                 }
@@ -67,7 +64,7 @@ pipeline {
                 dir('terraform') {
                     withCredentials([[$class: 'AmazonWebServicesCredentialsBinding', credentialsId: 'awsCredentials', accessKeyVariable: 'AWS_ACCESS_KEY_ID', secretKeyVariable: 'AWS_SECRET_ACCESS_KEY']]) {
                         ansiColor('xterm') {
-                            //sh 'terraform destroy -auto-approve'
+                            sh 'terraform destroy -auto-approve'
                         }
                     }
                 }
