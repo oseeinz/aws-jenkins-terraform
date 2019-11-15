@@ -29,7 +29,7 @@ resource "aws_elb" "TFweb-elb" {
 resource "aws_security_group" "TF_elb_sg" {
   name        = "TF_elb_sg"
   description = "elb security group"
-  vpc_id      = "${aws_vpc.TF_vpc.id}"
+  vpc_id      = aws_vpc.TF_vpc.id
 
   ingress {
     from_port   = 80
