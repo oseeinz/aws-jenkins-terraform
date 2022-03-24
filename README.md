@@ -1,5 +1,5 @@
 # aws-jenkins-terraform
-
+clear# Testing vscode commit
 ## Overview
 
 devOps workflow with Terraform, packer, ansible and Jenkins to provision HA evnironment with httpd and Tomcat.
